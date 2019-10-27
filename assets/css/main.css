@@ -2369,16 +2369,35 @@ input, select, textarea {
 				text-align: center;
 			}
 
-				ul.pagination li > .page.active {
+			form.search-form {
+				position: relative;
+			}
+
+			.search-btn {
+				position: absolute;
+				right: 6px;
+				border: none;
+				outline: none;
+				font-size: 20px;
+				top: 11px;
+			}
+
+			.search-form button {
+				border: none;
+				outline: none;
+				box-shadow: none;
+			}
+
+				ul.pagination li > .page.current-menu-item {
 					background-color: #f56a6a;
 					color: #ffffff !important;
 				}
 
-					ul.pagination li > .page.active:hover {
+					ul.pagination li > .page.current-menu-item:hover {
 						background-color: #f67878;
 					}
 
-					ul.pagination li > .page.active:active {
+					ul.pagination li > .page.current-menu-item:active {
 						background-color: #f45c5c;
 					}
 
@@ -2616,6 +2635,11 @@ input, select, textarea {
 			border-top: 0;
 			margin-top: 0;
 			padding-top: 0;
+		}
+
+		.wp-post-image {
+			width: 100% !important;
+			height: auto !important;
 		}
 
 /* Features */
@@ -2865,6 +2889,7 @@ input, select, textarea {
 				.posts article .image img {
 					display: block;
 					width: 100%;
+					height: auto;
 				}
 
 		@media screen and (min-width: 1681px) {
@@ -3528,7 +3553,7 @@ input, select, textarea {
 				color: #f56a6a;
 			}
 
-			#menu ul a.opener, #menu ul span.opener {
+			#menu ul a.menu-item-has-children, #menu ul span.menu-item-has-children {
 				-moz-transition: color 0.2s ease-in-out;
 				-webkit-transition: color 0.2s ease-in-out;
 				-ms-transition: color 0.2s ease-in-out;
@@ -3538,7 +3563,7 @@ input, select, textarea {
 				position: relative;
 			}
 
-				#menu ul a.opener:before, #menu ul span.opener:before {
+				#menu ul a.menu-item-has-children:before, #menu ul span.menu-item-has-children:before {
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
 					display: inline-block;
@@ -3551,7 +3576,7 @@ input, select, textarea {
 					font-weight: 900;
 				}
 
-				#menu ul a.opener:before, #menu ul span.opener:before {
+				#menu ul a.menu-item-has-children:before, #menu ul span.menu-item-has-children:before {
 					-moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
 					-webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 					-ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
@@ -3562,15 +3587,15 @@ input, select, textarea {
 					right: 0;
 				}
 
-				#menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
+				#menu ul a.menu-item-has-children:hover:before, #menu ul span.menu-item-has-children:hover:before {
 					color: #f56a6a;
 				}
 
-				#menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
+				#menu ul a.menu-item-has-children.active + ul, #menu ul span.menu-item-has-children.active + ul {
 					display: block;
 				}
 
-				#menu ul a.opener.active:before, #menu ul span.opener.active:before {
+				#menu ul a.menu-item-has-children.active:before, #menu ul span.menu-item-has-children.active:before {
 					-moz-transform: rotate(-180deg);
 					-webkit-transform: rotate(-180deg);
 					-ms-transform: rotate(-180deg);
@@ -3603,4 +3628,12 @@ input, select, textarea {
 			border-top: 0;
 			margin-top: 0;
 			padding-top: 0;
+		}
+
+		div#comments {
+			margin-top: 271px;
+		}
+
+		.comment-body {
+			margin-bottom: 40px;
 		}
