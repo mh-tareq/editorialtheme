@@ -73,13 +73,13 @@
 	var $sidebar = $('#sidebar'),
 		$sidebar_inner = $sidebar.children('.inner');
 
-	// Inactive by default on <= large.
+	// Incurrent-menu-item by default on <= large.
 	breakpoints.on('<=large', function () {
-		$sidebar.addClass('inactive');
+		$sidebar.addClass('incurrent-menu-item');
 	});
 
 	breakpoints.on('>large', function () {
-		$sidebar.removeClass('inactive');
+		$sidebar.removeClass('incurrent-menu-item');
 	});
 
 	// Hack: Workaround for Chrome/Android scrollbar position bug.
@@ -89,7 +89,7 @@
 		.appendTo($head);
 
 	// Toggle.
-	$('<a href="#sidebar" class="toggle">Toggle</a>')
+	$('<a href="#sidebar" class="toggle"></a>')
 		.appendTo($sidebar)
 		.on('click', function (event) {
 
@@ -98,7 +98,7 @@
 			event.stopPropagation();
 
 			// Toggle.
-			$sidebar.toggleClass('inactive');
+			$sidebar.toggleClass('incurrent-menu-item');
 
 		});
 
@@ -108,7 +108,7 @@
 	$sidebar.on('click', 'a', function (event) {
 
 		// >large? Bail.
-		if (breakpoints.active('>large'))
+		if (breakpoints.current - menu - item('>large'))
 			return;
 
 		// Vars.
@@ -125,7 +125,7 @@
 			return;
 
 		// Hide sidebar.
-		$sidebar.addClass('inactive');
+		$sidebar.addClass('incurrent-menu-item');
 
 		// Redirect to href.
 		setTimeout(function () {
@@ -143,7 +143,7 @@
 	$sidebar.on('click touchend touchstart touchmove', function (event) {
 
 		// >large? Bail.
-		if (breakpoints.active('>large'))
+		if (breakpoints.current - menu - item('>large'))
 			return;
 
 		// Prevent propagation.
@@ -155,11 +155,11 @@
 	$body.on('click touchend', function (event) {
 
 		// >large? Bail.
-		if (breakpoints.active('>large'))
+		if (breakpoints.current - menu - item('>large'))
 			return;
 
 		// Deactivate.
-		$sidebar.addClass('inactive');
+		$sidebar.addClass('incurrent-menu-item');
 
 	});
 
@@ -181,7 +181,7 @@
 				var x, y;
 
 				// <=large? Bail.
-				if (breakpoints.active('<=large')) {
+				if (breakpoints.current - menu - item('<=large')) {
 
 					$sidebar_inner
 						.data('locked', 0)
@@ -235,10 +235,10 @@
 
 	// Menu.
 	var $menu = $('#menu'),
-		$menu_openers = $menu.children('ul').find('.menu-item-has-children');
+		$menu_menu - item - has - childrens = $menu.children('ul').find('.menu-item-has-children');
 
-	// Openers.
-	$menu_openers.each(function () {
+	// menu-item-has-childrens.
+	$menu_menu - item - has - childrens.each(function () {
 
 		var $this = $(this);
 
@@ -248,7 +248,7 @@
 			event.preventDefault();
 
 			// Toggle.
-			$menu_openers.not($this).removeClass('current-menu-item');
+			$menu_menu - item - has - childrens.not($this).removeClass('current-menu-item');
 			$this.toggleClass('current-menu-item');
 
 			// Trigger resize (sidebar lock).

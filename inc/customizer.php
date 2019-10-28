@@ -280,5 +280,83 @@ function editorialtheme_feature_customize_register($wp_customize)
 
 
     ///////////////// end Social Icons //////////////////////
+
+
+    ///////////////// Contacts Siudebar //////////////////////
+
+    //Contact
+    $wp_customize->add_section('editorialtheme_contact_sedebar', array(
+        'title' => esc_html__('Sidebar Contact', 'editorialtheme')
+    ));
+
+    //Title Setting
+    $wp_customize->add_setting('editorialtheme_title_sidebar', array(
+        'default'           =>  'Get in touch'
+    ));
+
+    //Title Control
+    $wp_customize->add_control('editorialtheme_title_sidebar', array(
+        'label'     =>  esc_html__('Title', 'editorialtheme'),
+        'section'   =>  'editorialtheme_contact_sedebar'
+    ));
+
+    //Content Setting
+    $wp_customize->add_setting('editorialtheme_content_sidebar', array(
+        'default'           =>  'Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.'
+    ));
+
+    //Content Control
+    $wp_customize->add_control('editorialtheme_content_sidebar', array(
+        'label'     =>  esc_html__('Content', 'editorialtheme'),
+        'section'   =>  'editorialtheme_contact_sedebar'
+    ));
+
+    //Contact email Setting
+    $wp_customize->add_setting('editorialtheme_email_sidebar', array(
+        'default'           =>  'information@untitled.tld'
+    ));
+
+    //Contact email Control
+    $wp_customize->add_control('editorialtheme_email_sidebar', array(
+        'label'     =>  esc_html__('Email', 'editorialtheme'),
+        'section'   =>  'editorialtheme_contact_sedebar'
+    ));
+
+
+
+    //Phone Setting
+    $wp_customize->add_setting('editorialtheme_phone_sidebar', array(
+        'default'           =>  '(000) 000-0000'
+    ));
+    //Phone Control
+    $wp_customize->add_control('editorialtheme_phone_sidebar', array(
+        'label'     =>  esc_html__('Phone Number', 'editorialtheme'),
+        'section'   =>  'editorialtheme_contact_sedebar'
+    ));
+
+    //Address Setting
+    $wp_customize->add_setting('editorialtheme_address_sidebar', array(
+        'default'           =>  '1234 Somewhere Road #8254
+Nashville, TN 00000-0000'
+    ));
+    //Address Control
+    $wp_customize->add_control('editorialtheme_address_sidebar', array(
+        'label'     =>  esc_html__('Address', 'editorialtheme'),
+        'section'   =>  'editorialtheme_contact_sedebar'
+    ));
+
+    //Copyright Setting
+    $wp_customize->add_setting('editorialtheme_copyright_sidebar', array(
+        'default'           =>  '© Untitled. All rights reserved. Demo Images: Unsplash. Design: HTML5 UP. Developed: Tareq'
+    ));
+    //Copyright Control
+    $wp_customize->add_control('editorialtheme_copyright_sidebar', array(
+        'label'     =>  esc_html__('Address', 'editorialtheme'),
+        'section'   =>  'editorialtheme_contact_sedebar'
+    ));
+
+
+
+    ///////////////// end Contacts Siudebar //////////////////////
 }
 add_action('customize_register', 'editorialtheme_feature_customize_register');
